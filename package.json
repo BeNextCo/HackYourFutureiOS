@@ -1,0 +1,21 @@
+{
+  "name": "Hackyourfutureios",
+  "version": "1.0.0",
+  "dependencies": {
+    "json-server": "^0.15.0"
+  },
+  "scripts": {
+    "json:server": "json-server --watch mock/Events/events.json"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeNextCo/HackYourFutureiOS.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BeNextCo/HackYourFutureiOS/issues"
+  },
+  "homepage": "https://github.com/BeNextCo/HackYourFutureiOS#readme"
+}

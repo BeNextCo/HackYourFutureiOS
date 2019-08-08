@@ -1,0 +1,88 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "title": "Benews",
+        "type": "benews",
+        "image_url": "https://www.hackyourfuture.fr/wp-content/uploads/2018/10/Event-beNews-beNext.jpg",
+        "date_begin": "2019-09-04T06:03:16 -01:00",
+        "date_end": "2019-09-04T16:03:16 -01:00",
+        "address": {
+            "city": "Paris",
+            "zip_code": "75012",
+            "street": "1é rue Vivienne",
+            "latitude": 4.730197,
+            "longitude": -8.131438
+        },
+        "attendees": [
+            {
+                "firstname": "JULIEN",
+                "lastname": "SZPYTMA",
+                "email": "JULIEN.SZPYTMA@benextcompany.com"
+            },
+            {
+                "firstname": "BENJAMIN",
+                "lastname": "MORALI",
+                "email": "BENJAMIN.MORALI@benextcompany.com"
+            },
+            {
+                "firstname": "KEVIN",
+                "lastname": "LE FRANC",
+                "email": "KEVIN.LEFRANC@benextcompany.com"
+            },
+            {
+                "firstname": "MIKAËL",
+                "lastname": "MICHEL",
+                "email": "MIKAËL.MICHEL@benextcompany.com"
+            },
+            {
+                "firstname": "JUSTINE",
+                "lastname": "FIAFFÉ",
+                "email": "JUSTINE.FIAFFÉ@benextcompany.com"
+            }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "School of Po",
+        "type": "meetup",
+        "image_url": "https://www.hackyourfuture.fr/wp-content/uploads/2018/09/Event-MEETUP-beNext.jpg",
+        "date_begin": "2019-19-04T06:03:16 -01:00",
+        "date_end": "2019-19-04T16:03:16 -01:00",
+        "address": {
+            "city": "Paris",
+            "zip_code": "75012",
+            "street": "1é rue Vivienne",
+            "latitude": 4.730197,
+            "longitude": -8.131438
+        },
+        "attendees": [
+            {
+                "firstname": "JULIEN",
+                "lastname": "SZPYTMA",
+                "email": "JULIEN.SZPYTMA@benextcompany.com"
+            },
+            {
+                "firstname": "BENJAMIN",
+                "lastname": "MORALI",
+                "email": "BENJAMIN.MORALI@benextcompany.com"
+            },
+            {
+                "firstname": "KEVIN",
+                "lastname": "LE FRANC",
+                "email": "KEVIN.LEFRANC@benextcompany.com"
+            },
+            {
+                "firstname": "MIKAËL",
+                "lastname": "MICHEL",
+                "email": "MIKAËL.MICHEL@benextcompany.com"
+            },
+            {
+                "firstname": "JUSTINE",
+                "lastname": "FIAFFÉ",
+                "email": "JUSTINE.FIAFFÉ@benextcompany.com"
+            }
+        ]
+      }
+    ]
+  }
