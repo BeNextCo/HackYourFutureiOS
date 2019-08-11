@@ -17,6 +17,11 @@ before_install:
   - bundle install
   - bundle exec pod install
 
+matrix:
+  include:
+    - env: 
+      - DESTINATION="platform=iOS Simulator,name=iPhone X,OS=12.4"
+
 script:
   - xcodebuild clean -workspace "$WORKSPACE" -scheme "$SCHEME"
-  - xcodebuild  -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.2' test
+  - xcodebuild  -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk iphonesimulator -destination "$DESTINATION" test
