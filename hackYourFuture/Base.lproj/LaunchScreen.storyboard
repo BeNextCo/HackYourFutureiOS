@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +15,49 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_bg" translatesAutoresizingMaskIntoConstraints="NO" id="01Q-QY-XLu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="202" id="IeI-eh-E1g"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_bg" translatesAutoresizingMaskIntoConstraints="NO" id="rqD-kW-90Q">
+                                <rect key="frame" x="0.0" y="742" width="375.00000000000006" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Ndh-Ju-gbR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hackYourFuture_logo" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-Jw-ecX">
+                                <rect key="frame" x="0.0" y="313" width="375" height="186"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C8s-Jw-ecX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5hL-0O-uSz"/>
+                            <constraint firstItem="rqD-kW-90Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Rr-1C-mpr"/>
+                            <constraint firstItem="01Q-QY-XLu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CIy-jw-U6y"/>
+                            <constraint firstItem="C8s-Jw-ecX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D7k-rK-OR5"/>
+                            <constraint firstItem="01Q-QY-XLu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Je6-r5-egU"/>
+                            <constraint firstItem="C8s-Jw-ecX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OxC-6W-rAe"/>
+                            <constraint firstItem="01Q-QY-XLu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="W3y-lJ-rUh"/>
+                            <constraint firstAttribute="bottom" secondItem="rqD-kW-90Q" secondAttribute="bottom" id="rvc-e4-7Hu"/>
+                            <constraint firstItem="C8s-Jw-ecX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tcQ-gK-DCa"/>
+                            <constraint firstAttribute="trailing" secondItem="rqD-kW-90Q" secondAttribute="trailing" id="xQV-St-waw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="373.89162561576359"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bottom_bg" width="239" height="71"/>
+        <image name="hackYourFuture_logo" width="375" height="186"/>
+        <image name="header_bg" width="375" height="202"/>
+    </resources>
 </document>

@@ -86,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1106E21B23048231002DF59A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78106E3F22FB3F3100D10902 /* Assets.xcassets */,
+				78106E4422FB3F3100D10902 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		62555E45F1527C830060D8BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,13 +129,12 @@
 		78106E3722FB3F3000D10902 /* hackYourFuture */ = {
 			isa = PBXGroup;
 			children = (
+				1106E21B23048231002DF59A /* Resources */,
 				786ED92122FB4979004311B1 /* Commom */,
 				786ED91822FB4355004311B1 /* Scenes */,
 				78106E3822FB3F3000D10902 /* AppDelegate.swift */,
 				786ED92422FB4CB0004311B1 /* Foo */,
-				78106E3F22FB3F3100D10902 /* Assets.xcassets */,
 				78106E4122FB3F3100D10902 /* LaunchScreen.storyboard */,
-				78106E4422FB3F3100D10902 /* Info.plist */,
 			);
 			path = hackYourFuture;
 			sourceTree = "<group>";
@@ -534,7 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4965NT4QX9;
-				INFOPLIST_FILE = hackYourFuture/Info.plist;
+				INFOPLIST_FILE = hackYourFuture/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -554,7 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4965NT4QX9;
-				INFOPLIST_FILE = hackYourFuture/Info.plist;
+				INFOPLIST_FILE = hackYourFuture/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
