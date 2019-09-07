@@ -26,7 +26,7 @@ class EventListCoordinator: CoordinatorProtocol {
 
     func start() {
         let eventListViewModel = EventListViewModel(provider: self.eventProvider)
-        let eventListViewController = EventListViewController.instantiateFromStoryboard()
+        let eventListViewController = StoryboardScene.EventList.initialScene.instantiate()
         eventListViewController.viewModel = eventListViewModel
         eventListViewController.coordinator = self
 
