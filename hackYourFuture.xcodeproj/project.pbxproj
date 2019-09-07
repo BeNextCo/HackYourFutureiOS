@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06FEB89B84755C34DF3F764E /* Pods_hackYourFuture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6649962AD87C237072B4924F /* Pods_hackYourFuture.framework */; };
+		11586EBC23237C6400ED9382 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11586EBA23237C6400ED9382 /* assets-images.swift */; };
+		11586EBD23237C6400ED9382 /* Storyboard Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11586EBB23237C6400ED9382 /* Storyboard Scenes.swift */; };
 		54F99C664175010555E05374 /* Pods_hackYourFutureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8332D93D3BC9298735627 /* Pods_hackYourFutureTests.framework */; };
 		78106E3922FB3F3000D10902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78106E3822FB3F3000D10902 /* AppDelegate.swift */; };
 		78106E4022FB3F3100D10902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78106E3F22FB3F3100D10902 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11586EBA23237C6400ED9382 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
+		11586EBB23237C6400ED9382 /* Storyboard Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard Scenes.swift"; sourceTree = "<group>"; };
 		6649962AD87C237072B4924F /* Pods_hackYourFuture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackYourFuture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78106E3522FB3F3000D10902 /* hackYourFuture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackYourFuture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78106E3822FB3F3000D10902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11586EB72323786400ED9382 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11586EB8232378C700ED9382 /* Generated */,
+				78106E3F22FB3F3100D10902 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11586EB8232378C700ED9382 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				11586EB923237BEC00ED9382 /* SwiftGen */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		11586EB923237BEC00ED9382 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				11586EBA23237C6400ED9382 /* assets-images.swift */,
+				11586EBB23237C6400ED9382 /* Storyboard Scenes.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
 		62555E45F1527C830060D8BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,11 +150,11 @@
 		78106E3722FB3F3000D10902 /* hackYourFuture */ = {
 			isa = PBXGroup;
 			children = (
+				11586EB72323786400ED9382 /* Resources */,
 				786ED92122FB4979004311B1 /* Commom */,
 				786ED91822FB4355004311B1 /* Scenes */,
 				78106E3822FB3F3000D10902 /* AppDelegate.swift */,
 				786ED92422FB4CB0004311B1 /* Foo */,
-				78106E3F22FB3F3100D10902 /* Assets.xcassets */,
 				78106E4122FB3F3100D10902 /* LaunchScreen.storyboard */,
 				78106E4422FB3F3100D10902 /* Info.plist */,
 			);
@@ -206,6 +236,7 @@
 			buildConfigurationList = 78106E5222FB3F3100D10902 /* Build configuration list for PBXNativeTarget "hackYourFuture" */;
 			buildPhases = (
 				E0662ABF3728CC4A7200BB23 /* [CP] Check Pods Manifest.lock */,
+				11586EB6232377B400ED9382 /* SwiftGen */,
 				78106E3122FB3F3000D10902 /* Sources */,
 				78106E3222FB3F3000D10902 /* Frameworks */,
 				78106E3322FB3F3000D10902 /* Resources */,
@@ -317,6 +348,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		11586EB6232377B400ED9382 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
 		13083F9A222F8B017447CC05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,10 +437,12 @@
 				786ED92B22FB50A9004311B1 /* EventListCellViewModel.swift in Sources */,
 				786ED91522FB4323004311B1 /* EventListViewModel.swift in Sources */,
 				786ED92622FB4CC8004311B1 /* Event.swift in Sources */,
+				11586EBC23237C6400ED9382 /* assets-images.swift in Sources */,
 				786ED91A22FB439B004311B1 /* CoordinatorProtocol.swift in Sources */,
 				786ED92D22FB50E2004311B1 /* EventListCell.swift in Sources */,
 				786ED92822FB4CE1004311B1 /* EventProvider.swift in Sources */,
 				786ED91322FB4317004311B1 /* EventListViewController.swift in Sources */,
+				11586EBD23237C6400ED9382 /* Storyboard Scenes.swift in Sources */,
 				78106E3922FB3F3000D10902 /* AppDelegate.swift in Sources */,
 				786ED92022FB4902004311B1 /* UINavigationProtocol.swift in Sources */,
 				786ED91C22FB442C004311B1 /* EventListCoordinator.swift in Sources */,

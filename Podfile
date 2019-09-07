@@ -9,7 +9,7 @@ target 'hackYourFuture' do
   pod "RxSwift"
   pod "RxCocoa"
   pod 'SwiftLint', '~> 0.32'
-  # pod 'SwiftGen', '~> 6.1'
+  pod 'SwiftGen', '~> 6.1'
   # pod 'Sourcery', '~> 0.17'
 
   target 'hackYourFutureTests' do

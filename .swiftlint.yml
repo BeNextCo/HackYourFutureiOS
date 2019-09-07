@@ -3,6 +3,7 @@ included: # paths to include during linting. `--path` is ignored if present.
 excluded:
   - Pods
   - hackYourFuture/hackYourFutureTests/
+  - hackYourFuture/Resources/Generated
 
 opt_in_rules:
   - array_init

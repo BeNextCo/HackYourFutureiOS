@@ -1,0 +1,11 @@
+xcassets:
+  inputs:
+    - hackYourFuture/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: hackYourFuture/Resources/Generated/SwiftGen/assets-images.swift
+ib:
+  inputs: .
+  outputs:
+    - templateName: scenes-swift4
+      output: hackYourFuture/Resources/Generated/SwiftGen/Storyboard Scenes.swift

@@ -71,3 +71,8 @@ fastlane/test_output
 
 # Node dependencies
 node_modules/
+
+
+# Generated
+
+hackYourFuture/Resources/Generated/*
