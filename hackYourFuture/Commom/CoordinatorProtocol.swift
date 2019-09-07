@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// sourcery: AutoMockable
 protocol CoordinatorProtocol {
     var childCoordinators: [CoordinatorProtocol] { get set }
     var navigationController: UINavigationControllerProtocol? { get set }

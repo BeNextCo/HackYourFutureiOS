@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol EventListCellViewModelProtocol {
     var title: String { get }
     var imageUrl: String { get }

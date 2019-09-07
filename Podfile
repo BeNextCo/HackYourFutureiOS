@@ -10,7 +10,7 @@ target 'hackYourFuture' do
   pod "RxCocoa"
   pod 'SwiftLint', '~> 0.32'
   pod 'SwiftGen', '~> 6.1'
-  # pod 'Sourcery', '~> 0.17'
+  pod 'Sourcery', '~> 0.16.2'
 
   target 'hackYourFutureTests' do
     inherit! :search_paths

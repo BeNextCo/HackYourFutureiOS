@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// sourcery: AutoMockable
 protocol UINavigationControllerProtocol: class {
     func pushViewController(_ viewController: UIViewController, animated: Bool)
 }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 
+/// sourcery: AutoMockable
 protocol EventListViewModelProtocol {
     var cellViewModels: Observable<[EventListCellViewModelProtocol]> { get }
 

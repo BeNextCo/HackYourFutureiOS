@@ -10,6 +10,7 @@
 		06FEB89B84755C34DF3F764E /* Pods_hackYourFuture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6649962AD87C237072B4924F /* Pods_hackYourFuture.framework */; };
 		11586EC4232413AF00ED9382 /* assets-images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11586EC2232413AF00ED9382 /* assets-images.swift */; };
 		11586EC5232413AF00ED9382 /* Storyboard Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11586EC3232413AF00ED9382 /* Storyboard Scenes.swift */; };
+		11586ECB2324439600ED9382 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11586ECA2324439600ED9382 /* Mocks.swift */; };
 		54F99C664175010555E05374 /* Pods_hackYourFutureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8332D93D3BC9298735627 /* Pods_hackYourFutureTests.framework */; };
 		78106E3922FB3F3000D10902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78106E3822FB3F3000D10902 /* AppDelegate.swift */; };
 		78106E4022FB3F3100D10902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78106E3F22FB3F3100D10902 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		11586EC2232413AF00ED9382 /* assets-images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "assets-images.swift"; sourceTree = "<group>"; };
 		11586EC3232413AF00ED9382 /* Storyboard Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard Scenes.swift"; sourceTree = "<group>"; };
+		11586ECA2324439600ED9382 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		6649962AD87C237072B4924F /* Pods_hackYourFuture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackYourFuture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78106E3522FB3F3000D10902 /* hackYourFuture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackYourFuture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78106E3822FB3F3000D10902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
+		11586EC823243B9600ED9382 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				11586ECA2324439600ED9382 /* Mocks.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		62555E45F1527C830060D8BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		78106E4C22FB3F3100D10902 /* hackYourFutureTests */ = {
 			isa = PBXGroup;
 			children = (
+				11586EC823243B9600ED9382 /* Generated */,
 				78106E4D22FB3F3100D10902 /* hackYourFutureTests.swift */,
 				78106E4F22FB3F3100D10902 /* Info.plist */,
 			);
@@ -254,6 +265,7 @@
 			buildConfigurationList = 78106E5522FB3F3100D10902 /* Build configuration list for PBXNativeTarget "hackYourFutureTests" */;
 			buildPhases = (
 				13083F9A222F8B017447CC05 /* [CP] Check Pods Manifest.lock */,
+				11586EC9232440D500ED9382 /* Sourcery */,
 				78106E4522FB3F3100D10902 /* Sources */,
 				78106E4622FB3F3100D10902 /* Frameworks */,
 				78106E4722FB3F3100D10902 /* Resources */,
@@ -363,6 +375,24 @@
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
 		};
+		11586EC9232440D500ED9382 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/hackYourFuture/scripts/sourcery.sh\n";
+		};
 		13083F9A222F8B017447CC05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78106E4E22FB3F3100D10902 /* hackYourFutureTests.swift in Sources */,
+				11586ECB2324439600ED9382 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
