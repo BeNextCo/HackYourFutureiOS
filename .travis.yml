@@ -15,7 +15,7 @@ env:
 
 before_install:
   - bundle install
-  - bundle exec pod install
+  - make pod_install
 
 matrix:
   include:

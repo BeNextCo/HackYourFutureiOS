@@ -71,3 +71,6 @@ fastlane/test_output
 
 # Node dependencies
 node_modules/
+
+
+# Generated

@@ -12,7 +12,7 @@ import RxSwift
 
 class EventListViewController: UIViewController {
     
-    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     var viewModel: EventListViewModelProtocol!
     var coordinator: EventListCoordinatorProtocol!
