@@ -17,17 +17,23 @@ protocol EventListViewModelProtocol {
 }
 
 class EventListViewModel {
+    // MARK: - Properties
 
     private let provider: EventProviderProtocol
     private let disposeBag: DisposeBag
     private let cellViewModelsSubject = PublishSubject<[EventListCellViewModelProtocol]>()
     let cellViewModels: Observable<[EventListCellViewModelProtocol]>
 
+    // MARK: - Init
+
     init(provider: EventProviderProtocol) {
         self.provider = provider
         self.cellViewModels = cellViewModelsSubject.asObservable()
         disposeBag = DisposeBag()
     }
+}
+
+extension EventListViewModel: EventListViewModelProtocol {
 
     func fetchEvents() {
         provider
@@ -37,12 +43,9 @@ class EventListViewModel {
             })
             .subscribe(onNext: {[weak self] (events) in
                 self?.cellViewModelsSubject.onNext(events)
-            }, onError: { (error) in
-                //@TODO:
+                }, onError: { (error) in
+                    //@TODO:
             })
             .disposed(by: disposeBag)
     }
-}
-
-extension EventListViewModel: EventListViewModelProtocol {
 }

@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
 
 class EventListViewController: UIViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private(set) weak var tableView: UITableView!
     
     var viewModel: EventListViewModelProtocol!
     var coordinator: EventListCoordinatorProtocol!
@@ -24,15 +25,25 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.registerCells()
+
         observeViewModel()
+
+        viewModel.fetchEvents()
     }
 
     private func observeViewModel() {
-        viewModel.cellViewModels
-            .subscribe(onNext: { [weak self] cellViewModels in
-                self?.cellViewModels = cellViewModels
-                self?.tableView.reloadData()
-            })
+        viewModel
+            .cellViewModels
+            .bind(to: tableView.rx.items(cellIdentifier: "cell",
+                                         cellType: EventListCell.self)) { _, element, cell in
+                                            cell.viewModel = element
+            }
             .disposed(by: disposeBag)
+    }
+
+    private func registerCells() {
+        self.tableView.register(UINib(nibName: "EventListCell", bundle: nil),
+                                forCellReuseIdentifier: "cell")
     }
 }

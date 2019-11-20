@@ -49,6 +49,44 @@ private func objectDidNotCallAnyMethod(_ object: Any, except methodName: String)
 
 
 
+class ConnectorProtocolMock: ConnectorProtocol {
+
+    //MARK: - request
+
+        var requestMethodHandlerCallsCount = 0
+        var requestMethodHandlerCalled: Bool {
+            return requestMethodHandlerCallsCount > 0
+        }
+        var requestMethodHandlerCalledOnly: Bool {
+            return objectDidNotCallAnyMethod(self, except: "requestMethodHandler")
+        }
+        var requestMethodHandlerCalledOnlyAndOnce: Bool {
+            return requestMethodHandlerCalledOnly && requestMethodHandlerCallsCount == 1
+        }
+
+        var requestMethodHandlerReceivedArguments: (url: String, method: ConnectorHttpMethod, handler: (Result<Data, Error>) -> Void)?
+        var requestMethodHandlerReceivedInvocations: [(url: String, method: ConnectorHttpMethod, handler: (Result<Data, Error>) -> Void)] = []
+
+
+    var requestMethodHandlerClosure: ((String, ConnectorHttpMethod, @escaping (Result<Data, Error>) -> Void) -> Void)?
+
+    func request(_ url: String,                 method: ConnectorHttpMethod,                 handler: @escaping (Result<Data, Error>) -> Void) {
+        requestMethodHandlerCallsCount += 1
+        requestMethodHandlerReceivedArguments = (url: url, method: method, handler: handler)
+        requestMethodHandlerReceivedInvocations.append((url: url, method: method, handler: handler))
+        requestMethodHandlerClosure?(url, method, handler)
+    }
+
+
+    // MARK: - noMethodCalled
+
+    var noMethodCalled: Bool {
+        return objectDidNotCallAnyMethod(self)
+    }
+
+    // MARK: - Lifecycle
+
+}
 class CoordinatorProtocolMock: CoordinatorProtocol {
     var childCoordinators: [CoordinatorProtocol] = []
     var navigationController: UINavigationControllerProtocol?
@@ -96,21 +134,11 @@ class EventListCellViewModelProtocolMock: EventListCellViewModelProtocol {
         set(value) { underlyingImageUrl = value }
     }
     var underlyingImageUrl: String!
-    var attendees: Int {
-        get { return underlyingAttendees }
-        set(value) { underlyingAttendees = value }
-    }
-    var underlyingAttendees: Int!
     var date: String {
         get { return underlyingDate }
         set(value) { underlyingDate = value }
     }
     var underlyingDate: String!
-    var address: String {
-        get { return underlyingAddress }
-        set(value) { underlyingAddress = value }
-    }
-    var underlyingAddress: String!
 
 
     // MARK: - noMethodCalled
@@ -123,15 +151,51 @@ class EventListCellViewModelProtocolMock: EventListCellViewModelProtocol {
 
         init() {}
 
-        init(title: String, imageUrl: String, attendees: Int, date: String, address: String) {
+        init(title: String, imageUrl: String, date: String) {
             self.title = title
             self.imageUrl = imageUrl
-            self.attendees = attendees
             self.date = date
-            self.address = address
         }
 }
 class EventListCoordinatorProtocolMock: EventListCoordinatorProtocol {
+
+
+    // MARK: - noMethodCalled
+
+    var noMethodCalled: Bool {
+        return objectDidNotCallAnyMethod(self)
+    }
+
+    // MARK: - Lifecycle
+
+}
+class EventListRepositoryProtocolMock: EventListRepositoryProtocol {
+
+    //MARK: - retrieveData
+
+        var retrieveDataThenCallsCount = 0
+        var retrieveDataThenCalled: Bool {
+            return retrieveDataThenCallsCount > 0
+        }
+        var retrieveDataThenCalledOnly: Bool {
+            return objectDidNotCallAnyMethod(self, except: "retrieveDataThen")
+        }
+        var retrieveDataThenCalledOnlyAndOnce: Bool {
+            return retrieveDataThenCalledOnly && retrieveDataThenCallsCount == 1
+        }
+
+        var retrieveDataThenReceivedHandler: (EventListHandler)?
+        var retrieveDataThenReceivedInvocations: [(EventListHandler)] = []
+
+
+    var retrieveDataThenClosure: ((@escaping EventListHandler) -> Void)?
+
+    func retrieveData(then handler: @escaping EventListHandler) {
+        retrieveDataThenCallsCount += 1
+        retrieveDataThenReceivedHandler = handler
+        retrieveDataThenReceivedInvocations.append(handler)
+        retrieveDataThenClosure?(handler)
+    }
 
 
     // MARK: - noMethodCalled

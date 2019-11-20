@@ -10,5 +10,22 @@ import Foundation
 import UIKit
 
 class EventListCell: UITableViewCell {
-    var viewModel: EventListCellViewModelProtocol!
+
+    @IBOutlet private(set) weak var eventTypeImageView: UIImageView!
+    @IBOutlet private(set) weak var eventTypeLabel: UILabel!
+    @IBOutlet private(set) weak var eventInformationDate: UILabel!
+    @IBOutlet private(set) weak var attendeesImageView: UIImageView!
+    @IBOutlet private(set) weak var attendeesNumberLabel: UILabel!
+
+    var viewModel: EventListCellViewModelProtocol! {
+        didSet {
+            self.configure()
+        }
+    }
+
+    private func configure() {
+        self.eventTypeLabel.text = viewModel.title
+        self.eventInformationDate.text = viewModel.date
+        self.attendeesNumberLabel.text = "0"
+    }
 }

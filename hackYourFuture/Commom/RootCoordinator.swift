@@ -21,7 +21,8 @@ class RootCoordinator: CoordinatorProtocol {
     }
 
     func start() {
-        let eventListCoordinator = EventListCoordinator(navigationController: navigationController, eventProvider: eventProvider)
+        let eventListCoordinator = EventListCoordinator(navigationController: navigationController,
+                                                        eventProvider: eventProvider)
         eventListCoordinator.start()
         childCoordinators.append(eventListCoordinator)
     }

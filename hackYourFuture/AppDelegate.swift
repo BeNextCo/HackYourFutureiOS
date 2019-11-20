@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createRootCoordinator() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
-        self.rootCoordinator = RootCoordinator(navigationController: navigationController, eventProvider: EventProvider())
+        let eventListRepository = EventListRepository(connector: AlamofireAdapter())
+        self.rootCoordinator = RootCoordinator(navigationController: navigationController,
+                                               eventProvider: EventProvider(repository: eventListRepository))
         self.window?.rootViewController = navigationController
         rootCoordinator?.start()
         

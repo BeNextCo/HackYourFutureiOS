@@ -8,6 +8,7 @@
 
 import XCTest
 import RxSwift
+
 @testable import hackYourFuture
 
 private typealias ResultatDuViewModel = [EventListCellViewModelProtocol]
@@ -53,8 +54,8 @@ class hackYourFutureTests: XCTestCase {
         viewModel.fetchEvents()
 
         provider.events = [
-            hackYourFuture.Event(title: "", imageUrl: "", attendees: 0, startDate: Date(), endDate: Date(), address: ""),
-            hackYourFuture.Event(title: "", imageUrl: "", attendees: 0, startDate: Date(), endDate: Date(), address: "")
+            hackYourFuture.Event(title: "", imageUrl: "", startDate: "", endDate: ""),
+            hackYourFuture.Event(title: "", imageUrl: "", startDate: "", endDate: "")
         ]
         viewModel.fetchEvents()
 

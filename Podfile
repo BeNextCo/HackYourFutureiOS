@@ -11,6 +11,8 @@ target 'hackYourFuture' do
   pod 'SwiftLint', '~> 0.32'
   pod 'SwiftGen', '~> 6.1'
   pod 'Sourcery', '~> 0.16.2'
+  pod 'Alamofire', '~> 4.9'
+  pod 'Kingfisher', '~> 5.10'
 
   target 'hackYourFutureTests' do
     inherit! :search_paths
